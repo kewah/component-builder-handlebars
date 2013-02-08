@@ -1,0 +1,13 @@
+{
+  "name": "test",
+  "description": "",
+  "version": "0.0.1",
+  "dependencies": {},
+  "templates": [
+    "test1.hbs",
+    "test2.hbs",
+    "test3.hbs",
+    "_partial1.hbs",
+    "_partial2.hbs"
+  ]
+}

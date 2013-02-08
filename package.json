@@ -5,7 +5,7 @@
   "author": "Antoine Lehurt <keuwah@gmail.com>",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "make test"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,10 @@
   ],
   "dependencies": {
     "handlebars": "~1.0.8"
+  },
+  "devDependencies": {
+    "mocha": "~1.8.1",
+    "should": "~1.2.1",
+    "component-builder": "~0.6.2"
   }
 }
