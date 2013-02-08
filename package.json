@@ -1,0 +1,24 @@
+{
+  "name": "component-builder-handlebars",
+  "version": "0.0.1",
+  "description": "Builder.js plugin to precompile Handlebars templates",
+  "author": "Antoine Lehurt <keuwah@gmail.com>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kewah/component-builder-handlebars.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "component",
+    "builder",
+    "handlebars",
+    "precompile"
+  ],
+  "dependencies": {
+    "handlebars": "~1.0.8"
+  }
+}
