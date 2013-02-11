@@ -18,7 +18,6 @@ Or with [grunt-component-build](https://github.com/anthonyshort/grunt-component-
 component: {
   app: {
     output: './build/',
-    config: './component.json',
     scripts: true,
     configure: function(builder) {
       builder.use(handlebarsPlugin({
