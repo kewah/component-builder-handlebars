@@ -71,10 +71,6 @@ var output = myTpl({
 });
 ```
 
-## Release History
-
-- 09/02/2013 - 0.1.0 - Initial release
-
 ## Contributing
 
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code.
