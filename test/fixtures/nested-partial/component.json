@@ -1,0 +1,8 @@
+{
+  "name": "test-nested-partial",
+  "templates": [
+    "views/top.hbs",
+    "views/_nav.hbs",
+    "views/list/_li.hbs"
+  ]
+}

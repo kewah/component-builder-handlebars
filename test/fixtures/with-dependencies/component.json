@@ -1,0 +1,10 @@
+{
+  "name": "test-with-dependencies",
+  "local": [
+    "local-component-test"
+  ],
+  "templates": [
+    "test.hbs",
+    "_partial.hbs"
+  ]
+}

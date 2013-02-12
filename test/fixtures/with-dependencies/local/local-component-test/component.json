@@ -1,0 +1,7 @@
+{
+  "name": "local-component-test",
+  "templates": [
+    "template.hbs",
+    "_partial.hbs"
+  ]
+}

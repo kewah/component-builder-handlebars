@@ -1,0 +1,6 @@
+{
+  "name": "test-tpl-only-in-dependencies",
+  "local": [
+    "local-component-test"
+  ]
+}
