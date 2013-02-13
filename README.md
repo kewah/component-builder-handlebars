@@ -45,7 +45,7 @@ Define the prefix to identify Handlebars partials.
 ## Example
 
 ```html
-[_navPartial.hbs]
+[componentName/path/to/_navPartial.hbs]
 
 <nav>
   <ul>
@@ -56,14 +56,16 @@ Define the prefix to identify Handlebars partials.
 ```
 
 ```html
-[myTemplate.hbs]
+[componentName/path/to/myTemplate.hbs]
 
 <h1>{{title}}</h1>
 <!-- When you include a partial don't use the prefix -->
-{{> navPartial}}
+{{> componentName/path/to/navPartial}}
 ```
 
 ```javascript
+[componentName/path/to/module.js]
+
 var myTpl = require('./myTemplate');
 
 var output = myTpl({
