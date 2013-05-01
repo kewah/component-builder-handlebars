@@ -1,6 +1,6 @@
 {
   "name": "component-builder-handlebars",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Builder.js plugin to precompile Handlebars templates",
   "author": "Antoine Lehurt <keuwah@gmail.com>",
   "main": "index.js",
