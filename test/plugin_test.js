@@ -1,3 +1,4 @@
+
 var Builder = require('component-builder');
 var plugin = require('../lib/plugin');
 var vm = require('vm');
@@ -5,12 +6,16 @@ var vm = require('vm');
 describe('Handlerbars plugin', function() {
 
   var req = function(res, moduleName) {
-    return 'var window = "";' + res.require + res.js + '; require("' + moduleName + '")';
+    return 'var window = "";' + res.handlebars + res.requirejs + res.scripts + res.templates + '; require("' + moduleName + '")';
   };
 
   it('should precompile templates and partials', function(done) {
     var builder = new Builder('test/fixtures/tpl-and-partial');
     builder.use(plugin());
+    builder.use(Builder.commonjs('scripts'));
+    builder.use(Builder.commonjs('templates'));
+    builder.use(Builder.concat('scripts'));
+    builder.use(Builder.concat('templates'));
 
     builder.build(function(err, res) {
       if (err) return done(err);
@@ -30,8 +35,12 @@ describe('Handlerbars plugin', function() {
 
   it('should precompile templates from external module', function(done) {
     var builder = new Builder('test/fixtures/with-dependencies');
-    builder.addLookup('test/fixtures/with-dependencies/local');
+    builder.path('local');
     builder.use(plugin());
+    builder.use(Builder.commonjs('scripts'));
+    builder.use(Builder.commonjs('templates'));
+    builder.use(Builder.concat('scripts'));
+    builder.use(Builder.concat('templates'));
 
     builder.build(function(err, res) {
       if (err) return done(err);
@@ -49,6 +58,10 @@ describe('Handlerbars plugin', function() {
   it('should precompile nested partials', function(done) {
     var builder = new Builder('test/fixtures/nested-partial');
     builder.use(plugin());
+    builder.use(Builder.commonjs('scripts'));
+    builder.use(Builder.commonjs('templates'));
+    builder.use(Builder.concat('scripts'));
+    builder.use(Builder.concat('templates'));
 
     builder.build(function(err, res) {
       if (err) return done(err);
@@ -62,9 +75,13 @@ describe('Handlerbars plugin', function() {
 
   it('should precompile include the runtime', function(done) {
     var builder = new Builder('test/fixtures/tpl-only-in-dependencies');
-    builder.addLookup('test/fixtures/tpl-only-in-dependencies/local');
-    builder.addSourceURLs();
+    builder.path('local');
+    builder.development();
     builder.use(plugin());
+    builder.use(Builder.commonjs('scripts'));
+    builder.use(Builder.commonjs('templates'));
+    builder.use(Builder.concat('scripts'));
+    builder.use(Builder.concat('templates'));
 
     builder.build(function(err, res) {
       if (err) return done(err);
