@@ -1,4 +1,4 @@
-# component-builder-handlebars
+# component-builder-handlebars [![Build Status](https://travis-ci.org/kewah/component-builder-handlebars.svg?branch=master)](https://travis-ci.org/kewah/component-builder-handlebars)
 
 > [Builder2.js](https://github.com/component/builder2.js) plugin to precompile Handlebars templates to [Component.js](https://github.com/component/component) modules.
 
