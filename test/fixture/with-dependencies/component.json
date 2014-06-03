@@ -1,0 +1,9 @@
+{
+  "name": "with-dependencies",
+  "paths": [
+    "lib"
+  ],
+  "locals": [
+    "a"
+  ]
+}

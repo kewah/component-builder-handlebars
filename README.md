@@ -1,33 +1,45 @@
 # component-builder-handlebars
 
-> [Builder.js](https://github.com/component/builder.js) plugin to precompile Handlebars templates to [Component.js](https://github.com/component/component) modules.
+> [Builder2.js](https://github.com/component/builder2.js) plugin to precompile Handlebars templates to [Component.js](https://github.com/component/component) modules.
+
+## Install
+
+With [npm](http://npmjs.org) do:
+
+```bash
+$ npm install component-builder-handlebars --save-dev
+```
 
 ## Usage
-```javascript
-var handlebarsPlugin = require('component-builder-handlebars');
 
-var builder = new Builder('test/fixtures');  
-builder.use(handlebarsPlugin({
-  extname: '.hbs',
+### Build
+
+```js
+var builder = require('component-builder');
+var hbs = require('component-builder-handlebars');
+
+var options = {
+  extname: 'hbs',
   partialRegex: /^_/
-}));
+};
+
+builder.scripts(tree)
+  .use('scripts', Builder.plugins.js())
+  .use('templates', hbs(options))
+  .end(function(err, string) {
+    fs.writeFileSync(dest, string);
+  });
 ```
 
-Or with [grunt-component-build](https://github.com/anthonyshort/grunt-component-build):
-```javascript
-component: {
-  app: {
-    output: './build/',
-    scripts: true,
-    configure: function(builder) {
-      builder.use(handlebarsPlugin({
-        extname: '.hbs',
-        partialRegex: /^_/
-      }));
-    }
-  }
-}
+### Partials
+
+To include a partial inside a template:
+
+```html
+{{> componentName/path/to/_partial }}
 ```
+
+For [instance](test/fixture/with-partials/_nav.hbs).
 
 ## Options
 
@@ -44,40 +56,14 @@ Define the prefix to identify Handlebars partials.
 
 ## Example
 
-```html
-[componentName/path/to/_navPartial.hbs]
+See [example](example) folder.
 
-<nav>
-  <ul>
-  	<li>…</li>
-  	...
-  </ul>	
-</nav>
+To build it:
+
+```bash
+$ npm run example
 ```
-
-```html
-[componentName/path/to/myTemplate.hbs]
-
-<h1>{{title}}</h1>
-<!-- When you include a partial don't use the prefix -->
-{{> componentName/path/to/navPartial}}
-```
-
-```javascript
-[componentName/path/to/module.js]
-
-var myTpl = require('./myTemplate');
-
-var output = myTpl({
-  title: 'Ready to start'
-});
-```
-
-## Contributing
-
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code.
 
 ## License
 
-Copyright (c) 2013 Antoine Lehurt  
 Licensed under the MIT license.

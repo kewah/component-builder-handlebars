@@ -1,0 +1,11 @@
+{
+  "locals": [
+    "b"
+  ],
+  "templates": [
+    "index.hbs"
+  ],
+  "scripts": [
+    "index.js"
+  ]
+}
