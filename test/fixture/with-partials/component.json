@@ -1,0 +1,10 @@
+{
+  "scripts": [
+    "index.js"
+  ],
+  "templates": [
+    "top.hbs",
+    "_nav.hbs",
+    "list/_li.hbs"
+  ]
+}

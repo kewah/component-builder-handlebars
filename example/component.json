@@ -1,0 +1,13 @@
+{
+  "name": "example",
+  "templates": [
+    "main.hbs",
+    "_header.hbs"
+  ],
+  "scripts": [
+    "index.js"
+  ],
+  "dependencies": {
+    "component/domify": "^1.2.2"
+  }
+}

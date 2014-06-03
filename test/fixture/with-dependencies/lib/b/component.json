@@ -1,0 +1,8 @@
+{
+  "templates": [
+    "_partial.hbs"
+  ],
+  "scripts": [
+    "index.js"
+  ]
+}
