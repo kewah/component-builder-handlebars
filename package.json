@@ -32,10 +32,10 @@
     "handlebars": "^3.0.0"
   },
   "devDependencies": {
-    "component-builder": "^1.1.5",
-    "component-resolver": "^1.1.5",
-    "express": "^3.4.8",
-    "fs-extra": "^0.9.1",
-    "mocha": "*"
+    "component-builder": "^1.2.1",
+    "component-resolver": "^1.2.8",
+    "express": "^4.12.2",
+    "fs-extra": "^0.16.5",
+    "mocha": "^2.2.1"
   }
 }
